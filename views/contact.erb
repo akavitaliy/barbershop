@@ -1,0 +1,21 @@
+<h2>Наши контакты</h2>
+
+<form action="/contact" method="POST" role="form">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Ваше имя</label>
+    <input value="<%=@name%>" name="name" type="text" class="form-control" id="exampleInputEmail1" placeholder="Введите ваше имя">
+    <br>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Ваш email</label>
+    <input value="<%=@email%>" name="email" type="text" class="form-control" id="exampleInputEmail1" placeholder="Введите ваш email">
+    <br>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Ваше сообщение</label>
+    <textarea value="<%=@message%>" name="message" type="email" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Введите сообщение"></textarea>
+  </div> 
+  <button type="submit" class="btn btn-primary">отправить</button>
+</form>
+
+

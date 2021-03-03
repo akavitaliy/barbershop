@@ -1,0 +1,48 @@
+<h2>Записаться</h2>
+<p>Здесь вы ожете записяться на приём</p>
+
+<form action="/visit" method="POST" role="form">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Ваше имя</label>
+    <input value="<%=@username%>" name="username" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите ваше имя">
+    <br>
+    <label for="exampleInputEmail1">Ваш телефон</label>
+    <input value="<%=@phone%>" name="phone" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите ваш телефон">
+    <br>
+    <label for="exampleInputEmail1">Время записи</label>
+    <input value="<%=@datetime%>" name="datetime" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите время записи">
+    </div>
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Выберете парикмахера</label>
+    <select name="barber" class="form-control" id="exampleFormControlSelect1">
+      <option <%= @barber == 'Walter Wite' ? 'selected' : '' %>>Walter Wite</option>
+      <option <%= @barber == 'Jessie Pinkman' ? 'selected' : '' %>>Jessie Pinkman</option>
+      <option <%= @barber == 'Gus Fring' ? 'selected' : '' %>>Gus Fring</option>      
+    </select>
+    <br>
+    <div class="form-group">
+      <label >Выберете цвет краски:</label>
+      <select id="color" name="colors">
+        <option value="#7bd148">Green</option>
+        <option value="#5484ed">Bold blue</option>
+        <option value="#a4bdfc">Blue</option>
+        <option value="#46d6db">Turquoise</option>
+        <option value="#7ae7bf">Light green</option>
+        <option value="#51b749">Bold green</option>
+        <option value="#fbd75b">Yellow</option>
+        <option value="#ffb878">Orange</option>
+        <option value="#ff887c">Red</option>
+        <option value="#dc2127">Bold red</option>
+        <option value="#dbadff">Purple</option>
+        <option value="#e1e1e1">Gray</option>
+      </select>
+     </div>   
+  </div>
+  <button type="submit" class="btn btn-primary">записяться</button>
+</form>
+
+<script>
+  $ (function () {
+    $('select[id="color"]').simplecolorpicker();
+  })  
+</script>
