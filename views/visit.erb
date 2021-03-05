@@ -10,7 +10,7 @@
     <input value="<%=@phone%>" name="phone" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите ваш телефон">
     <br>
     <label for="exampleInputEmail1">Время записи</label>
-    <input value="<%=@datetime%>" name="datetime" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите время записи">
+    <input id="datetimepicker" value="<%=@datetime%>" name="datetime" type="text" class="form-control" id="exampleInputEmail1" placeholder="введите время записи">
     </div>
     <div class="form-group">
     <label for="exampleFormControlSelect1">Выберете парикмахера</label>
@@ -44,5 +44,6 @@
 <script>
   $ (function () {
     $('select[id="color"]').simplecolorpicker();
+    $('select[id="datetimepicker"]').datetimtpicker.full();
   })  
 </script>

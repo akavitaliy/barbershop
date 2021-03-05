@@ -103,7 +103,11 @@ post "/contact" do
 		  :authentication       => :plain, # :plain, :login, :cram_md5, no auth by default
 		  :domain               => "localhost.localdomain" # the HELO domain provided by the client to the server
 		}
-	  })
+	  }
+	)
+
+	db = get_db
+	db.execute 'insert into Contacts (username, email, message) values (?,?,?)', [@name, @email, @message]
 	
 	f = File.open "./public/contacts.txt", "a"
 	f.write "Имя: #{@name}, Email: #{@email}, Сообщение: #{@message}\n"
