@@ -1,6 +1,13 @@
 <h2>Записаться</h2>
 <p>Здесь вы ожете записяться на приём</p>
 
+<script type="text/javascript">
+  $ (function () {
+    $('#color').simplecolorpicker();
+    $('#datetimepicker').datetimepicker();
+  });  
+</script>
+
 <form action="/visit" method="POST" role="form">
   <div class="form-group">
     <label for="exampleInputEmail1">Ваше имя</label>
@@ -41,9 +48,4 @@
   <button type="submit" class="btn btn-primary">записяться</button>
 </form>
 
-<script>
-  $ (function () {
-    $('select[id="color"]').simplecolorpicker();
-    $('select[id="datetimepicker"]').datetimtpicker.full();
-  })  
-</script>
+
