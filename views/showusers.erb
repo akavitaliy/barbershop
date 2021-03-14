@@ -1,0 +1,29 @@
+<h2>Список записавшихся клиентов</h2>
+ 
+<% @x = 0 %>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Имя</th>
+      <th scope="col">Телефон</th>
+      <th scope="col">Дата и время</th>
+      <th scope="col">Барбер</th>
+      <th scope="col">Цвет</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dbusers.each do |row| %>
+    <% @x += 1 %>
+      <tr>
+        <th scope="row"><%= @x %></th>
+        <td><%=row['username']%></td>
+        <td><%=row['phone']%></td>
+        <td><%=row['datestamp']%></td>
+        <td><%=row['barber']%></td>
+        <td><%=row['color']%></td>      
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -50,6 +50,8 @@ get '/contact' do
 end
 
 get '/showusers' do
+	db = get_db
+	@dbusers = db.execute 'select * from Users order by id DESC'
 	erb :showusers
 end
 
