@@ -24,9 +24,14 @@
     <div class="form-group">
     <label for="exampleFormControlSelect1">Выберете парикмахера</label>
     <select name="barber" class="form-control" id="exampleFormControlSelect1">
-      <option <%= @barber == 'Walter Wite' ? 'selected' : '' %>>Walter Wite</option>
+      <!-- <option <%= @barber == 'Walter Wite' ? 'selected' : '' %>>Walter Wite</option>
       <option <%= @barber == 'Jessie Pinkman' ? 'selected' : '' %>>Jessie Pinkman</option>
-      <option <%= @barber == 'Gus Fring' ? 'selected' : '' %>>Gus Fring</option>      
+      <option <%= @barber == 'Gus Fring' ? 'selected' : '' %>>Gus Fring</option> -->    
+
+      <%@barbers.each do |item|%>
+        <option <%= @barber == item['name'] ? 'selected' : '' %>><%=item['name']%></option>
+      <%end%>
+
     </select>
     <br>
     <div class="form-group">

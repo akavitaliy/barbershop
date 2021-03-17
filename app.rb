@@ -5,6 +5,13 @@ require 'sinatra/contrib'
 require 'pony'
 require 'sqlite3'
 
+
+before	do
+	db = get_db	
+	@barbers = db.execute 'select * from Barbers'	
+end
+
+
 def get_db
 	db = SQLite3::Database.new 'barber.db'	
 	db.results_as_hash = true
@@ -24,6 +31,7 @@ def seed_db db, barbers
 		end	
 	
 end
+
 
 configure do
 	db = get_db
