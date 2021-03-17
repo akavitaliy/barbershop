@@ -109,7 +109,7 @@ post '/visit' do
 	f.write "Имя: #{@username}, Телефон: #{@phone}, Время записи: #{@datetime}, Парикмахер: #{@barber}, Цвет: #{@colors}\n"
 	f.close
 
-	erb @error = 'Произошла ошибка!'
+	erb '<h3> Спасибо вы записались! </h3>'
 
 end
 
